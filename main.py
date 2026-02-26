@@ -1,6 +1,7 @@
 
 #imports
 import ttkbootstrap as ttk
+from tkinter import PhotoImage
 import time
 import threading
 from pynput.mouse import Controller, Button
@@ -127,9 +128,9 @@ class StartFrame(ttk.Frame): #Frame holds on/off button and  autoclicker logic
         self.running = not self.running
 
         if self.running:
-            self.startButton.config(text="⏹ Stop", style="Stop.Big.TButton")
+            self.startButton.config(text="⏹ Stop (F6)", style="Stop.Big.TButton")
         else:
-            self.startButton.config(text="▶ Start", style="Start.Big.TButton")
+            self.startButton.config(text="▶ Start (F6)", style="Start.Big.TButton")
 
     #Clicks every x seconds while state = true
     def clickLoop(self):
@@ -155,7 +156,7 @@ class MainApp(ttk.Window): #Main ui initializer
         self.geometry("500x400")
         self.maxsize(280,150)
         self.minsize(280,150)
-        
+
         #configure grid layout for frames
         self.grid_rowconfigure(0, weight=0) #weight controlls ratio 0:10:2 (how much each frame take up of window)
         self.grid_rowconfigure(1, weight= 1)
